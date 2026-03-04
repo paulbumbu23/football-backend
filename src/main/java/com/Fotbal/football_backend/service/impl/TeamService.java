@@ -132,8 +132,8 @@ public class TeamService implements ITeamService {
     private List<PlayerResponseDto> getTopPlayersByPosition(List<Player> teamPlayers, Position position, int numberOfPlayersOnPosition) throws NotFoundException {
         if (teamPlayers.stream()
                 .filter(player -> player.getPosition() == position)
-                .collect(Collectors.toList()).size() < numberOfPlayersOnPosition) {
-            throw new NotFoundException(String.format("Not enough players on position:", position));
+                .toList().size() < numberOfPlayersOnPosition) {
+            throw new NotFoundException(String.format("Not enough players on position: %s", position));
         }
 
         return teamPlayers.stream()
