@@ -18,8 +18,6 @@ import java.util.List;
 @AllArgsConstructor
 public class TeamController {
 
-    // GET /teams/:teamId/squad -> FirstElevenTeamResponseDto
-
     private final ITeamService teamService;
 
     @GetMapping("/teams")
